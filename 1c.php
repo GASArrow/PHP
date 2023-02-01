@@ -9,8 +9,11 @@ foreach($arr as $user)
 			if ($user['roles'][$j]['roleid'] == 0)
 				$istutor = 1;
 		if (!$istutor)
+		{
 			$add_role = $url.$token.'&wsfunction=add_role&assignments[0][userid]='.$userid.'&assignments[0][instanceid]='.$courseid;
 			$curl->post($add_role);
+	
+		}
 	}
 if(!$isenrolled)
 {
